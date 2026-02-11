@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/cv/Header";
 import { Box } from "@mui/material";
+import Body from "../components/cv/Body";
 
 
 const CV: React.FC = () => {
@@ -13,6 +14,8 @@ const CV: React.FC = () => {
                 py: 4,
             }}>
             <Header />
+            <Body />
+
         </Box>
     );
 };
