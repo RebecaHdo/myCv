@@ -1,12 +1,13 @@
-import './App.css'
+
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import CV from "./pages/Cv";
+
+const theme = createTheme();
 
 function App() {
-
   return (
-    <div>
-      <h1>Hola caracola :D</h1>
-    </div>
-  )
+      <CV />
+  );
 }
 
-export default App
+export default App;
