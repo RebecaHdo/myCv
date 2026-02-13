@@ -6,14 +6,14 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 
 
-interface DateSeccionProps {
+interface DateSectionProps {
   date: [number, number]; // Dos años
   title: string;
   subtitle?: string;
   details?: string[];
 }
 
-const DateSeccion: React.FC<DateSeccionProps> = ({
+const DateSection: React.FC<DateSectionProps> = ({
   date,
   title,
   subtitle,
@@ -68,4 +68,4 @@ const DateSeccion: React.FC<DateSeccionProps> = ({
   );
 };
 
-export default DateSeccion;
+export default DateSection;
