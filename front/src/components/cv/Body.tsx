@@ -1,13 +1,15 @@
-import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Box, Grid, Typography } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import DateSeccion from "./DateSection";
+import DateSection from "./DateSection";
+import RatingSection from "./RatingSection";
 
 export default function Body() {
     return (
         <Box sx={{
             width: "95%",
         }}>
-            <Accordion>
+            {/**About me*/}
+            <Accordion defaultExpanded>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1-content"
@@ -24,23 +26,58 @@ export default function Body() {
                     </Typography>
                 </AccordionDetails>
             </Accordion>
-            <Accordion>
-                <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1-content"
-                    id="panel1-header"
-                >
-                    <Typography component="span">Educación</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                    <DateSeccion
-                        date={[2017, 2021]}
-                        title="Grado Ingeniería Informática"
-                        subtitle="Universidad de valladolid"
-                        details={["Mención de Ingeniería de Software"]}
-                    />
-                </AccordionDetails>
-            </Accordion>
+            
+            <Grid container spacing={2} >
+                <Grid size={4}>
+
+                    {/**Education*/}
+                    <Accordion>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1-content"
+                            id="panel1-header"
+                        >
+                            <Typography component="span">Educación</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <DateSection
+                                date={[2017, 2021]}
+                                title="Grado Ingeniería Informática"
+                                subtitle="Universidad de valladolid"
+                                details={["Mención de Ingeniería de Software"]}
+                            />
+                        </AccordionDetails>
+                    </Accordion>
+
+                    {/**Languages */}
+                    <Accordion>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1-content"
+                            id="panel1-header"
+                        >
+                            <Typography component="span">Idiomas</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails >
+                            <RatingSection
+                                title="Español"
+                                subtitle="Nativo"
+                                value={5}
+                            />
+
+                            <RatingSection
+                                title="Inglés"
+                                subtitle="B1"
+                                value={3}
+                            />
+                        </AccordionDetails>
+                    </Accordion>
+                </Grid>
+
+                <Grid size={8}>
+                    Columna 2
+                </Grid>
+            </Grid>
         </Box>
     )
 }
