@@ -1,7 +1,8 @@
 import { Accordion, AccordionDetails, AccordionSummary, Box, Grid, Typography } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import DateSection from "./DateSection";
-import RatingSection from "./RatingSection";
+import RatingSection from "./RatingSection"
+import UsefulInformationSection from "./UsefulInformationSection";
 
 export default function Body() {
     return (
@@ -26,7 +27,7 @@ export default function Body() {
                     </Typography>
                 </AccordionDetails>
             </Accordion>
-            
+
             <Grid container spacing={2} >
                 <Grid size={4}>
 
@@ -69,6 +70,27 @@ export default function Body() {
                                 title="Inglés"
                                 subtitle="B1"
                                 value={3}
+                            />
+                        </AccordionDetails>
+                    </Accordion>
+
+                    {/**useful information */}
+                    <Accordion defaultExpanded>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1-content"
+                            id="panel1-header"
+                        >
+                            <Typography component="span">Datos de interés</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails >
+                            <UsefulInformationSection
+                                information={[
+                                    { inf: "Carné de conducir", enabled: true },
+                                    { inf: "Vehículo propio", enabled: true },
+                                    { inf: "Disponibilidad inmediata", enabled: true },
+                                    { inf: "Disponibilidad geográfica", enabled: true }
+                                ]}
                             />
                         </AccordionDetails>
                     </Accordion>
