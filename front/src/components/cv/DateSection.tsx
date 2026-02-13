@@ -25,27 +25,36 @@ const DateSeccion: React.FC<DateSeccionProps> = ({
   return (
     <Box sx={{ width: "100%", mb: 3 }}>
       <Grid container spacing={2} alignItems="flex-start">
+
         {/* Left */}
-        <Grid item xs={12} sm={2}>
-          <Typography fontWeight="bold">{formattedDate}</Typography>
+        <Grid size={{ xs: 12, sm: 4 }}>
+          <Typography fontWeight="bold">
+            {formattedDate}
+          </Typography>
         </Grid>
 
         {/* Right */}
-        <Grid item xs={12} sm={10}>
+        <Grid size={{ xs: 12, sm: 8 }}>
           <Typography variant="h6" fontWeight="bold">
             {title}
           </Typography>
 
           {subtitle && (
-            <Typography variant="body1">
+            <Typography variant="body1" sx={{ color: "text.secondary" }}>
               {subtitle}
             </Typography>
           )}
 
-          {details && details.length > 0 && (
-            <List>
-              {details.map((detail, index) => (
-                <ListItem key={index}>
+          {details && details?.length > 0 && (
+            <List sx={{ listStyleType: "disc", pl: 2 }}>
+              {details?.map((detail, index) => (
+                <ListItem
+                  key={index}
+                  sx={{
+                    display: "list-item",
+                    py: 0.5
+                  }}
+                >
                   <Typography variant="body2">
                     {detail}
                   </Typography>
