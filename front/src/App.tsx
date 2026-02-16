@@ -16,6 +16,15 @@ const theme = createTheme({
     h3: {
       color: "#b919d2"
     }
+  },
+  components: {
+    MuiAccordion: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#f6f4f8",
+        }
+      }
+    }
   }
 });
 
