@@ -44,7 +44,10 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({
       <Grid container spacing={4}>
         {filteredData.map((group) => (
           <Grid key={group.category}>
-            <Paper sx={{ padding: 3 }} elevation={3}>
+            <Paper sx={{
+              padding: 3,
+              backgroundColor: "#f6f4f8"
+            }} elevation={3}>
               <Typography variant="h6" gutterBottom color="primary" fontWeight="bold">
                 {group.category}
               </Typography>
