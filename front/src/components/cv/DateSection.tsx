@@ -27,7 +27,8 @@ const DateSection: React.FC<DateSectionProps> = ({
       <Grid container spacing={2} alignItems="flex-start">
 
         {/* Left */}
-        <Grid size={{ xs: 12, sm: 4 }}>
+        <Grid size={{ xs: 12, sm: 4 }} display="flex"
+          justifyContent="flex-end" pr={2}>
           <Typography fontWeight="bold">
             {formattedDate}
           </Typography>

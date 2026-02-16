@@ -75,7 +75,7 @@ export default function Body() {
                     </Accordion>
 
                     {/**useful information */}
-                    <Accordion defaultExpanded>
+                    <Accordion>
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1-content"
@@ -97,7 +97,45 @@ export default function Body() {
                 </Grid>
 
                 <Grid size={8}>
-                    Columna 2
+                    <Accordion defaultExpanded>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1-content"
+                            id="panel1-header"
+                        >
+                            <Typography component="span">Experiencia laboral</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <DateSection
+                                date={[2024, 2025]}
+                                title="Ingeniera full stack"
+                                subtitle="Doctomatic, SL"
+                                details={["Desarrollo y mantenimiento de la plataforma web y móvil Doctomatic con React, NestJS y TypeScript.", "Diseño y evolución del CMS, integrando PostgreSQL y MongoDB dentro de una arquitectura escalable y segura.", "Pruebas automatizadas con Playwright y Jest, aplicando buenas prácticas para garantizar la calidad del producto."]}
+                            />
+
+                            <DateSection
+                                date={[2023, 2024]}
+                                title="Desarrolladora senior full stack"
+                                subtitle="Energilandia"
+                                details={["Recopilé y analicé requisitos para desarrollar un CRM personalizado adaptado a las necesidades del negocio.", "Diseñé, implementé y mantuve el sistema utilizando Flask como framework principal y MongoDB como base de datos NoSQL.", "Aseguré la escalabilidad y eficiencia del CRM aplicando buenas prácticas de desarrollo y estructuración de datos."]}
+                            />
+
+                            <DateSection
+                                date={[2022, 2023]}
+                                title="Desarrolladora junior full stack"
+                                subtitle="TOOOLS"
+                                details={["Implementé soluciones web robustas, seguras y mantenibles utilizando Django como framework principal.","Colaboré con equipos técnicos y administrativos para garantizar el cumplimiento de requisitos funcionales y técnicos.", "Desarrollé plugins en PHP para WordPress, adaptados a diferentes kits digitales."]}
+                            />
+
+                            <DateSection
+                                date={[2021, 2022]}
+                                title="Desarrolladora junior full stack"
+                                subtitle="ALTIA CONSULTORES, SA"
+                                details={["Desarrollo y mantenimiento de sistemas ERP personalizados con Odoo creando y adaptando módulos en distintas versiones.", "Personalización de procesos empresariales e integración de Odoo con sistemas externos, automatizando flujos de trabajo.", "Colaboración directa con clientes en la toma de requisitos y entrega de soluciones a medida, mejorando la eficiencia operativa."]}
+                            />
+
+                        </AccordionDetails>
+                    </Accordion>
                 </Grid>
             </Grid>
         </Box>
