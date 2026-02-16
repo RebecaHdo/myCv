@@ -9,9 +9,10 @@ const CV: React.FC = () => {
         <Box
             sx={{
                 minHeight: "100vh",
-                width: "100%",
-                px: { xs: 2, sm: 4, md: 6 }, // horizontal responsive
-                py: 4,
+                maxWidth: "90%",
+                px: { xs: 4, sm: 6, md: 10 },
+                py: { xs: 6, md: 10 },
+                mx: "auto"
             }}>
             <Header />
             <Body />
