@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 
-export default function ResponsiveH6({ children, ...props }) {
+export default function ResponsiveH6({...props }) {
   return (
     <Typography
       variant="h6"
@@ -9,7 +9,6 @@ export default function ResponsiveH6({ children, ...props }) {
       }}
       {...props}
     >
-      {children}
     </Typography>
   );
 }
