@@ -41,7 +41,7 @@ const RatingSection: React.FC<RatingSectionProps> = ({
                         icon={<FiberManualRecordIcon fontSize="inherit" />}
                         emptyIcon={<FiberManualRecordIcon fontSize="inherit" opacity={0.3} />}
                         sx={{
-                            color: "#b919d2", // purple
+                            color: "var(--purple)", // purple
                         }} />
                 </Grid>
             </Grid>

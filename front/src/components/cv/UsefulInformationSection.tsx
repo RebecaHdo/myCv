@@ -35,9 +35,9 @@ const UsefulInformationSection: React.FC<UsefulInformationSectionProps> = ({
                                 <Typography variant="body1">
                                     {inf["inf"]}
                                 </Typography> {inf["enabled"] ? <DownloadDoneIcon sx={{
-                                    color: "#b919d2", // purple
+                                    color: "var(--purple)", // purple
                                 }} /> : <ClearIcon sx={{
-                                    color: "#b919d2", // purple
+                                    color: "var(--purple)", // purple
                                 }} />}
                             </Box>
                         </ListItem>

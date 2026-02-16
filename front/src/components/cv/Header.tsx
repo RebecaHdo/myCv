@@ -9,22 +9,22 @@ export default function Header() {
       <Typography variant="h2">
         Rebeca Hernando Brecht
       </Typography>
-      <Typography variant="h5">
+      <Typography variant="h5" color="primary">
         Ingeniera Informática y Desarrolladora Full Stack
       </Typography>
 
       <Grid container sx={{ p: "2em" }} spacing={2}>
         <Grid size={4}>
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-            <LocationOnIcon />
+            <LocationOnIcon color="primary" />
             <Typography variant="body1">Valladolid</Typography>
           </Box>
         </Grid>
         <Grid size={4}>
           <Typography variant="body1">
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-              <LinkedInIcon />
-              <Link href="https://www.linkedin.com/in/rebecahdo" target="_blank" rel="noopener noreferrer">
+              <LinkedInIcon color="primary" />
+              <Link href="https://www.linkedin.com/in/rebecahdo" target="_blank" rel="noopener noreferrer" sx={{ color: "blue" }}>
                 LinkedIn/RebecaHdo
               </Link>
             </Box>
@@ -32,7 +32,7 @@ export default function Header() {
         </Grid>
         <Grid size={4}>
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-            <MailIcon />
+            <MailIcon color="primary" />
             <Typography variant="body1">rebecahernandobrecht@gmail.com</Typography>
           </Box>
         </Grid>

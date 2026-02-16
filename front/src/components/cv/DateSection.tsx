@@ -41,7 +41,7 @@ const DateSection: React.FC<DateSectionProps> = ({
           </Typography>
 
           {subtitle && (
-            <Typography variant="body1" sx={{ color: "text.secondary" }}>
+            <Typography variant="body1" color="primary">
               {subtitle}
             </Typography>
           )}
