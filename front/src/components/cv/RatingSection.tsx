@@ -40,9 +40,7 @@ const RatingSection: React.FC<RatingSectionProps> = ({
                     <Rating value={value} max={5} readOnly
                         icon={<FiberManualRecordIcon fontSize="inherit" />}
                         emptyIcon={<FiberManualRecordIcon fontSize="inherit" opacity={0.3} />}
-                        sx={{
-                            color: "var(--purple)", // purple
-                        }} />
+                        sx={{ color: (theme) => theme.palette.primary.main }}/>
                 </Grid>
             </Grid>
         </Box>

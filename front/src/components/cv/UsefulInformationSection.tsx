@@ -7,12 +7,12 @@ import ClearIcon from '@mui/icons-material/Clear';
 
 
 type InformationItem = {
-  inf: string;
-  enabled: boolean;
+    inf: string;
+    enabled: boolean;
 };
 
 interface UsefulInformationSectionProps {
-  information: InformationItem[];
+    information: InformationItem[];
 }
 
 const UsefulInformationSection: React.FC<UsefulInformationSectionProps> = ({
@@ -34,11 +34,7 @@ const UsefulInformationSection: React.FC<UsefulInformationSectionProps> = ({
                             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                                 <Typography variant="body1">
                                     {inf["inf"]}
-                                </Typography> {inf["enabled"] ? <DownloadDoneIcon sx={{
-                                    color: "var(--purple)", // purple
-                                }} /> : <ClearIcon sx={{
-                                    color: "var(--purple)", // purple
-                                }} />}
+                                </Typography> {inf["enabled"] ? <DownloadDoneIcon color="primary" /> : <ClearIcon color="primary" />}
                             </Box>
                         </ListItem>
                     ))}
