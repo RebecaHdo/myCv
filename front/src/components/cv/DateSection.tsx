@@ -28,7 +28,11 @@ const DateSection: React.FC<DateSectionProps> = ({
 
         {/* Left */}
         <Grid size={{ xs: 12, sm: 4 }} display="flex"
-          justifyContent="flex-end" pr={2}>
+          sx={{
+            justifyContent: { sm: "flex-end", xs: "flex-start" }, // derecha en móviles, izquierda en desktop
+            pr: 2
+          }}
+        >
           <Typography fontWeight="bold">
             {formattedDate}
           </Typography>
