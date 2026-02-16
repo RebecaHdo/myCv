@@ -11,16 +11,16 @@ export default function Body() {
             width: "95%",
         }}>
             {/**About me*/}
-            <Accordion defaultExpanded>
+            <Accordion defaultExpanded sx={{ mb: 2 }}>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1-content"
                     id="panel1-header"
                 >
-                    <Typography component="span">Sobre mi</Typography>
+                    <Typography variant="h4">Sobre mi</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <Typography component="span" sx={{
+                    <Typography sx={{
                         wordBreak: "break-word",    // rompe palabras largas
                         overflowWrap: "break-word", // compatibilidad extra
                     }}>
@@ -40,7 +40,7 @@ export default function Body() {
                             aria-controls="panel1-content"
                             id="panel1-header"
                         >
-                            <Typography component="span">Educación</Typography>
+                            <Typography variant="h4">Educación</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                             <DateSection
@@ -59,7 +59,7 @@ export default function Body() {
                             aria-controls="panel1-content"
                             id="panel1-header"
                         >
-                            <Typography component="span">Idiomas</Typography>
+                            <Typography variant="h4">Idiomas</Typography>
                         </AccordionSummary>
                         <AccordionDetails >
                             <RatingSection
@@ -83,7 +83,7 @@ export default function Body() {
                             aria-controls="panel1-content"
                             id="panel1-header"
                         >
-                            <Typography component="span">Datos de interés</Typography>
+                            <Typography variant="h4">Datos de interés</Typography>
                         </AccordionSummary>
                         <AccordionDetails >
                             <UsefulInformationSection
@@ -132,7 +132,7 @@ export default function Body() {
                             aria-controls="panel1-content"
                             id="panel1-header"
                         >
-                            <Typography component="span">Experiencia laboral</Typography>
+                            <Typography variant="h4">Experiencia laboral</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                             <DateSection

@@ -24,13 +24,13 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({
     .filter((group) => group.skills.length > 0);
 
   return (
-    <Box sx={{ padding: 4 }}>
-      {/* Título */}
+    <Box sx={{ paddingTop: 4 }}>
+      {/* Title */}
       <Typography variant="h4" fontWeight="bold" gutterBottom>
         Habilidades
       </Typography>
 
-      {/* Buscador global */}
+      {/* Global search*/}
       <TextField
         fullWidth
         label="Buscar habilidad..."
@@ -40,12 +40,12 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      {/* Categorías */}
+      {/* Categories */}
       <Grid container spacing={4}>
         {filteredData.map((group) => (
-          <Grid xs={12} md={6} key={group.category}>
+          <Grid key={group.category}>
             <Paper sx={{ padding: 3 }} elevation={3}>
-              <Typography variant="h6" gutterBottom>
+              <Typography variant="h6" gutterBottom color="primary" fontWeight="bold">
                 {group.category}
               </Typography>
 
