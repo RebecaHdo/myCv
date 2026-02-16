@@ -3,6 +3,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import DateSection from "./DateSection";
 import RatingSection from "./RatingSection"
 import UsefulInformationSection from "./UsefulInformationSection";
+import SkillsSection from "./SkillsSection";
 
 export default function Body() {
     return (
@@ -29,6 +30,7 @@ export default function Body() {
             </Accordion>
 
             <Grid container spacing={2} >
+                {/**left */}
                 <Grid size={4}>
 
                     {/**Education*/}
@@ -94,9 +96,36 @@ export default function Body() {
                             />
                         </AccordionDetails>
                     </Accordion>
+
+                    {/**Skills */}
+                    <SkillsSection
+                        skillsData={[
+                            {
+                                category: "Lenguajes de programación",
+                                skills: ["Python", "SQL", "JavaScript", "HTML", "CSS", "Bash", "TypeScript"]
+                            },
+                            {
+                                category: "Frameworks y librerías",
+                                skills: ["React", "NestJS", "Playwright", "Jest", "Odoo", "Flask", "Django"]
+                            },
+                            {
+                                category: "Bases de datos",
+                                skills: ["PostgreSQL", "MySQL", "MongoDB"]
+                            },
+                            {
+                                category: "Control de versiones y herramientas de colaboración",
+                                skills: ["Git", "Jira"]
+                            },
+                            {
+                                category: "Sistemas operativos",
+                                skills: ["Windows", "GNU/Linux"]
+                            }
+                        ]} />
                 </Grid>
 
+                {/**right */}
                 <Grid size={8}>
+                    {/**work experience */}
                     <Accordion defaultExpanded>
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
@@ -124,7 +153,7 @@ export default function Body() {
                                 date={[2022, 2023]}
                                 title="Desarrolladora junior full stack"
                                 subtitle="TOOOLS"
-                                details={["Implementé soluciones web robustas, seguras y mantenibles utilizando Django como framework principal.","Colaboré con equipos técnicos y administrativos para garantizar el cumplimiento de requisitos funcionales y técnicos.", "Desarrollé plugins en PHP para WordPress, adaptados a diferentes kits digitales."]}
+                                details={["Implementé soluciones web robustas, seguras y mantenibles utilizando Django como framework principal.", "Colaboré con equipos técnicos y administrativos para garantizar el cumplimiento de requisitos funcionales y técnicos.", "Desarrollé plugins en PHP para WordPress, adaptados a diferentes kits digitales."]}
                             />
 
                             <DateSection
