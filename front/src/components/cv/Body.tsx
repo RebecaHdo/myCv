@@ -1,4 +1,4 @@
-import { Accordion, AccordionDetails, AccordionSummary, Box, Grid, Typography } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import DateSection from "./DateSection";
 import RatingSection from "./RatingSection"
@@ -6,10 +6,12 @@ import UsefulInformationSection from "./UsefulInformationSection";
 import SkillsSection from "./SkillsSection";
 
 export default function Body() {
+
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
     return (
-        <Box sx={{
-            width: "95%",
-        }}>
+        <Box sx={{ width: "95%", mx: "auto", my: 4 }}>
             {/**About me*/}
             <Accordion defaultExpanded sx={{ mb: 2 }}>
                 <AccordionSummary
@@ -31,8 +33,9 @@ export default function Body() {
 
             <Grid container spacing={2} >
                 {/**left */}
-                <Grid size={4}>
-
+                <Grid size={{ xs: 12, md: 4 }} sx={{
+                    order: { xs: 3, md: 1 },
+                }}>
                     {/**Education*/}
                     <Accordion>
                         <AccordionSummary
@@ -124,9 +127,16 @@ export default function Body() {
                 </Grid>
 
                 {/**right */}
-                <Grid size={8}>
+                <Grid size={{ xs: 12, md: 8 }} sx={{
+                    order: { xs: 2, md: 2 }, // importante: se mostrará debajo de Sobre mí en móviles
+                    mt: { xs: 2, md: 0 }     // margin-top para móviles
+                }}>
                     {/**work experience */}
-                    <Accordion defaultExpanded>
+                    <Accordion defaultExpanded={!isMobile} // cerrado en móviles
+                        sx={{
+                            display: "flex",
+                            flexDirection: "column"
+                        }}>
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1-content"
@@ -167,6 +177,6 @@ export default function Body() {
                     </Accordion>
                 </Grid>
             </Grid>
-        </Box>
+        </Box >
     )
 }
