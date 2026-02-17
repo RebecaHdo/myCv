@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://RebecaHdo.github.io/myCv",
+  "homepage": "https://rebecahdo.github.io/myCv/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
