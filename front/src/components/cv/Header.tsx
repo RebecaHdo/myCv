@@ -3,10 +3,14 @@ import MailIcon from '@mui/icons-material/Mail';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ResponsiveH6 from "./ResponsiveH6";
+import { useState } from "react";
+import DialogChatBot from "./DialogChatBot";
+
 
 export default function Header() {
 
   const theme = useTheme();
+  const [openChat, setOpenChat] = useState(false);
 
   return (
     <Box>
@@ -46,7 +50,9 @@ export default function Header() {
                 color: "#951dc4b4",
               },
             },
-          }}>
+          }}
+          onClick={() => setOpenChat(true)}>
+
           <Avatar
             alt="Rebeca Hernando"
             src="/static/images/avatar.png"
@@ -56,9 +62,15 @@ export default function Header() {
               bgcolor: theme.palette.primary.main,
               fontSize: { xs: 60, sm: 80 },
               mt: { xs: 2, sm: 0 },
+              cursor: "pointer"
             }}
           />
         </Tooltip>
+
+        <DialogChatBot
+          open={openChat}
+          onClose={() => setOpenChat(false)}
+        />
       </Box>
 
       <Grid container sx={{ p: "2em" }} spacing={2}>
