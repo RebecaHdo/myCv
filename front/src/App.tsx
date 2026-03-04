@@ -14,7 +14,7 @@ const theme = createTheme({
   },
   typography: {
     h3: {
-      color: "#b919d2"
+      color: "#951dc4"
     }
   },
   components: {

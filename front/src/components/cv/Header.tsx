@@ -1,4 +1,4 @@
-import { Avatar, Box, Grid, Link, Typography, useTheme  } from "@mui/material";
+import { Avatar, Box, Grid, Link, Tooltip, Typography, useTheme } from "@mui/material";
 import MailIcon from '@mui/icons-material/Mail';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -29,17 +29,36 @@ export default function Header() {
           </Typography>
         </Box>
 
-        <Avatar
-          alt="Rebeca Hernando"
-          src="/static/images/avatar.png"
-          sx={{
-            width: { xs: 150, sm: 200 },
-            height: { xs: 150, sm: 200 },
-            bgcolor: theme.palette.primary.main,
-            fontSize: { xs: 60, sm: 80 },
-            mt: { xs: 2, sm: 0 },
-          }}
-        />
+        <Tooltip title="Pincha para iniciar el chat bot"
+          placement="top-start"
+          arrow
+          open={true}
+          slotProps={{
+            tooltip: {
+              sx: {
+                bgcolor: "#951dc4b4",
+                color: "#000000",
+                fontSize: 14,
+              },
+            },
+            arrow: {
+              sx: {
+                color: "#951dc4b4",
+              },
+            },
+          }}>
+          <Avatar
+            alt="Rebeca Hernando"
+            src="/static/images/avatar.png"
+            sx={{
+              width: { xs: 150, sm: 200 },
+              height: { xs: 150, sm: 200 },
+              bgcolor: theme.palette.primary.main,
+              fontSize: { xs: 60, sm: 80 },
+              mt: { xs: 2, sm: 0 },
+            }}
+          />
+        </Tooltip>
       </Box>
 
       <Grid container sx={{ p: "2em" }} spacing={2}>
