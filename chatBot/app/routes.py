@@ -11,6 +11,9 @@ def chat():
     if not data or "message" not in data:
         return jsonify({"error": "Message is required"}), 400
 
-    response = ask_llm(data["message"])
+    try:
+        response = ask_llm(data["message"])
+        return jsonify({"response": response}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-    return jsonify({"response": response}), 200
