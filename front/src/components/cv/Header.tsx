@@ -36,7 +36,7 @@ export default function Header() {
         <Tooltip title="Pincha para iniciar el chat bot"
           placement="top-start"
           arrow
-          open={true}
+          open={!openChat}
           slotProps={{
             tooltip: {
               sx: {
