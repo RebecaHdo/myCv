@@ -36,7 +36,7 @@ export default function Header() {
         <Tooltip title="Pincha para iniciar el chat bot"
           placement="top-start"
           arrow
-          open={false}
+          open={!openChat}
           slotProps={{
             tooltip: {
               sx: {
@@ -50,7 +50,8 @@ export default function Header() {
                 color: "#951dc4b4",
               },
             },
-          }}>
+          }}
+          onClick={() => setOpenChat(true)}>
 
           <Avatar
             alt="Rebeca Hernando"
