@@ -9,6 +9,7 @@ import {
 import SendIcon from "@mui/icons-material/Send";
 import { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
+import TypingDots from "./TypingDots";
 
 
 interface DialogChatBotProps {
@@ -27,7 +28,13 @@ export default function DialogChatBot({
     >([{
         role: "assistant",
         content: "👋 ¡Hola! Soy un asistente que conoce el CV de Rebeca 💼\n\nPuedes preguntarme sobre su formación, experiencia profesional, proyectos, habilidades y el tipo de trabajo que está buscando 🚀\n\nEstoy aquí para ayudarte a conocer mejor su trayectoria y responder cualquier duda que tengas ✨"
+    },
+    {
+        role: "assistant",
+        content: "⚠️ Atención: Este chat utiliza un servidor y un modelo de IA gratuitos. \n\nEs posible que las respuestas tarden un poco si el servidor estaba inactivo o si se han consumido los tokens del plan gratuito ⏳\n\nGracias por tu paciencia 😊"
     }]);
+
+    const [isTyping, setIsTyping] = useState(false);
 
     const handleSend = async () => {
         if (!message.trim()) return;
@@ -36,8 +43,11 @@ export default function DialogChatBot({
         setMessages(newMessages);
         setMessage("");
 
+        setIsTyping(true);
+        setMessages(prev => [...prev, { role: "assistant", content: "" }]);
+
         try {
-            const response = await fetch("/api/chat", {
+            const response = await fetch("https://mycv-tork.onrender.com/chat", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -49,10 +59,12 @@ export default function DialogChatBot({
 
             setMessages([
                 ...newMessages,
-                { role: "assistant", content: data.reply },
+                { role: "assistant", content: data.response },
             ]);
         } catch (error) {
             console.error("Error:", error);
+        } finally {
+            setIsTyping(false);
         }
     };
 
@@ -127,7 +139,11 @@ export default function DialogChatBot({
                                     whiteSpace: "pre-line"
                                 }}
                             >
-                                {msg.content}
+                                {msg.content === "" && isTyping ? (
+                                    <TypingDots />
+                                ) : (
+                                    msg.content
+                                )}
                             </Box>
                         </Box>
                     ))}
