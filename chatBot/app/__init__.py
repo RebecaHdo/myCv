@@ -10,7 +10,8 @@ def create_app(testing=False):
 
     origins = [
         "http://localhost:5173",       
-        "https://https://rebecahdo.github.io/myCv/"           
+        "https://rebecahdo.github.io/",
+
     ]
     CORS(app, origins=origins)
 
