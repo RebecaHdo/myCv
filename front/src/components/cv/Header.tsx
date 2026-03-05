@@ -55,7 +55,7 @@ export default function Header() {
 
           <Avatar
             alt="Rebeca Hernando"
-            src="assets/avatar.png"
+            src="avatar.png"
             sx={{
               width: { xs: 150, sm: 200 },
               height: { xs: 150, sm: 200 },
