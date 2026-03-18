@@ -4,19 +4,22 @@ from rest_framework.test import APITestCase
 
 from django.contrib.auth.models import User
 from recipes.models.recipe import Recipe
+from datetime import datetime
 
 
 class RecipeAPITest(APITestCase):
 
     def setUp(self):
-        self.user = User.objects.create(username="testuser")
+        self.user, _ = User.objects.get_or_create(username="testuser")
 
     def test_create_recipe(self):
 
         url = reverse("recipe-list")
 
+        title = f"Pasta Carbonara-{datetime.now()}"
+
         data = {
-            "title": "Pasta Carbonara",
+            "title": title,
             "description": "Receta italiana",
             "prep_time": 10,
             "cook_time": 15,
@@ -28,7 +31,10 @@ class RecipeAPITest(APITestCase):
         response = self.client.post(url, data)
 
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-        self.assertEqual(Recipe.objects.count(), 1)
+        
+        recipes = Recipe.objects.filter(title=title)
+
+        self.assertEqual(len(recipes), 1)
 
     def test_update_recipe(self):
 
@@ -56,9 +62,11 @@ class RecipeAPITest(APITestCase):
         self.assertEqual(recipe.title, "Pasta Carbonara")
 
     def test_delete_recipe(self):
+        
+        title = f"Pasta Carbonara-{datetime.now()}"
 
         recipe = Recipe.objects.create(
-            title="Pasta",
+            title=title,
             description="Test",
             prep_time=10,
             cook_time=10,
@@ -72,4 +80,6 @@ class RecipeAPITest(APITestCase):
         response = self.client.delete(url)
 
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
-        self.assertEqual(Recipe.objects.count(), 0)
+        recipes = Recipe.objects.filter(title=title)
+
+        self.assertEqual(len(recipes), 0)
