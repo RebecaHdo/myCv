@@ -7,4 +7,9 @@ from recipes.serializers.recipe_serializer import RecipeSerializer
 class RecipeViewSet(viewsets.ModelViewSet):
 
     queryset = Recipe.objects.all()
-    serializer_class = RecipeSerializer
+
+    def get_serializer_class(self):
+        if self.action in ["list", "retrieve"]:
+            return RecipeOutputSerializer
+        return RecipeSerializer
+
